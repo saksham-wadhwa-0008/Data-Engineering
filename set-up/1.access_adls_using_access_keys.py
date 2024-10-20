@@ -7,10 +7,13 @@
 
 # COMMAND ----------
 
+account_key = dbutils.secrets.get("formula1-sc", key='storage-account-access-key')
+
+# COMMAND ----------
+
 spark.conf.set(
     "fs.azure.account.key.formula1dl069.dfs.core.windows.net",
-    "your storage access key will go here"
-)
+    account_key)
 
 # COMMAND ----------
 
